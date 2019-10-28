@@ -1,0 +1,138 @@
+  @import url("responsive-nav.css");
+  *,*::before,*::after{
+    box-sizing: border-box;
+  }
+  html,body{
+    min-height:100%;
+  }
+  body{
+      margin:0;
+      background-image: linear-gradient(-20deg, #b721ff 0%, #21d4fd 100%);
+      
+  }
+
+  /* BIG SCREEN MODE STYLES */
+  .wrapper{
+      height: 190vmin;
+      width: 80vw;
+      max-width: 1100px;
+      margin: 1rem auto;
+    
+      background-image: linear-gradient(-20deg, #2b5876 0%, #4e4376 100%);
+      box-shadow: 1px 3px 20px rgba(0,0,0,0.4);
+      border-radius: 8px; 
+
+      /* be careful with this position:relative */
+      position: relative;
+
+  }
+  .ht-container{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    overflow: hidden;
+    height: 100%;
+  }
+
+  /* styling the left column in DESKTOP/BIG SCREEN MODE  */
+  .ht-container .title{
+
+    /* WIDTH OF THE FIRST COLUMN */
+    width:90%;
+    height:20%;
+    text-align: center;
+    padding: 2rem;
+
+    /* 9rem MARGIN IS WHAT PUSHES THE .TITLE ->(LANDING TITLE) CONTENT DOWN THE PAGE */
+    margin: 9rem 0;
+
+  }
+  .ht-container h1{
+    font-family: 'Arvo', serif;
+    font-size: 2.625rem;
+    color:#fff;
+  }
+  .ht-container p{
+    font-family: 'Arvo', serif;
+    color: #fff;
+    line-height: 1.7;
+
+  }
+  .action-btns button{
+      font-size: 1.4rem;
+      padding: 1rem 2rem;
+      border: 5px solid #21d4fd;
+      border-radius: 2rem;
+      margin: 0 .1rem;
+      cursor: pointer;
+      
+  }
+  /* where second grid column starts */
+
+  .night{
+    border: 2px solid red;
+    height: 80vh;
+
+    /* this is where grid problems arise, ADJUST VIEWPORT LENGTHS TO FIT GRID APPROPRIATELY */
+    width: 70vw;
+
+    /* here is where we add our OWN assets and change the styles for our OWN */
+    background: url("../img/night-background.png");
+    background-size: cover;
+    /* margin: 5rem auto; */
+    position: relative;
+    box-shadow: 1px 2px 60px rgba(0,0,0,0.4);
+    overflow-x: hidden;
+
+  }
+  .surface{
+
+    /* again: WATCH HERE FOR GRID CHANGES */
+    height:140px;
+    width:500%;
+    display: block;
+    background: url("../img/Img_02.png");
+    position: absolute;
+    bottom:0;
+    left:0px;
+    background-repeat: repeat-x;
+  }
+
+  /* make changes as we dont need this */
+    .moveRight{
+        animation: moveRight 6s linear infinite;
+        /* animation-fill-mode: forwards; */
+        /* animation-iteration-count: 2; */
+    }
+
+    @keyframes moveRight{
+      100%{
+        transform: translateX(-2950px);
+      }
+    }
+  .car{
+    position: absolute;
+    bottom:8%;
+    left:24%;
+  }
+  .suspension{
+    animation: suspension 1s;   /* linear infinite */
+    /* animation-fill-mode: forwards;
+    animation-iteration-count: 2; */
+  }
+  
+@keyframes suspension{
+  100%{transform: translateY(-1px);}
+  50%{transform: translateY(2px);}
+  0%{transform: translateY(-1px);}
+}
+.clip-svg{
+
+  /* this can be anything we want in the future, the way this original design is done is not very practical compared to the way i would have done it, but for now this is for layout purposes
+  
+  note:  Clip path can be anything we want,  https://google.com/search/q=clippy+svg 
+  */
+  border: unset;
+
+  clip-path: url("#myclip");
+ /* clip-path: polygon(50% 0%, 0% 100%, 100% 100%); triangle */
+}
