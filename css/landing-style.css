@@ -8,19 +8,21 @@
   body{
       margin:0;
       background-image: linear-gradient(-20deg, #b721ff 0%, #21d4fd 100%);
-      
+      /* height:210vh; */
   }
 
   /* BIG SCREEN MODE STYLES */
   .wrapper{
-      height: 190vmin;
+
+    /* applied Height fix for mobile */
+      height: 100%;
       width: 80vw;
       max-width: 1100px;
       margin: 1rem auto;
     
       background-image: linear-gradient(-20deg, #2b5876 0%, #4e4376 100%);
       box-shadow: 1px 3px 20px rgba(0,0,0,0.4);
-      border-radius: 8px; 
+      border-radius: 18px; 
 
       /* be careful with this position:relative */
       position: relative;
@@ -30,7 +32,11 @@
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     overflow: hidden;
-    height: 100%;
+    max-height: 300vh;
+ 
+
+    /* scroll FALLBACK< CHANGE IMMEDIATELY FOR GRACEFUL DEG */
+    /* overflow-y: scroll; */
   }
 
   /* styling the left column in DESKTOP/BIG SCREEN MODE  */
@@ -43,7 +49,8 @@
     padding: 2rem;
 
     /* 9rem MARGIN IS WHAT PUSHES THE .TITLE ->(LANDING TITLE) CONTENT DOWN THE PAGE */
-    margin: 9rem 0;
+    margin: 9rem 1rem;
+    
 
   }
   .ht-container h1{
@@ -51,15 +58,19 @@
     font-size: 2.625rem;
     color:#fff;
   }
-  .ht-container p{
+  .ht-container p.landing-para{
     font-family: 'Arvo', serif;
     color: #fff;
     line-height: 1.7;
+    
 
   }
-  .action-btns button{
+  .action-btns button.cta{
       font-size: 1.4rem;
-      padding: 1rem 2rem;
+      /* adding responsive width and nice touches for button */
+       max-width: 50vmax;
+      width: 260px;
+      padding: 0.625rem 2rem;
       border: 5px solid #21d4fd;
       border-radius: 2rem;
       margin: 0 .1rem;
@@ -69,11 +80,12 @@
   /* where second grid column starts */
 
   .night{
-    border: 2px solid red;
-    height: 80vh;
+    
+    /* HEIGHT AND WIDTH OF THE CLIPPED IMAGE */
+    height: 560px;
 
     /* this is where grid problems arise, ADJUST VIEWPORT LENGTHS TO FIT GRID APPROPRIATELY */
-    width: 70vw;
+    width: 900px;
 
     /* here is where we add our OWN assets and change the styles for our OWN */
     background: url("../img/night-background.png");
@@ -97,7 +109,7 @@
     background-repeat: repeat-x;
   }
 
-  /* make changes as we dont need this */
+  /* CAR ANIMATION: make changes as we dont need this */
     .moveRight{
         animation: moveRight 6s linear infinite;
         /* animation-fill-mode: forwards; */
@@ -135,4 +147,52 @@
 
   clip-path: url("#myclip");
  /* clip-path: polygon(50% 0%, 0% 100%, 100% 100%); triangle */
+}
+.container-footer-mobile{
+  display:none;
+}
+
+@media screen and (max-width:1068px){
+  /* takes away our clip path'd image when screen sizes make too small */
+    .view{
+      display: none;
+    }
+
+    /* QUICK FIX!!! :)  */
+    .ht-container{
+      grid-template-areas: none;
+      display: block;
+    }
+    .container-footer-mobile{
+      display: block;
+    }
+    .container-footer-mobile img{
+      max-width: 100%;
+      overflow:hidden;
+    }
+    .landing-para{
+      font-size:145% !important;
+    }
+    .title{
+      width:100%;
+      min-width:80%;
+    
+      margin: 9rem 0;
+      
+
+    }
+    .title-mobile{
+      background-image: url("../img/night-background.png");
+      clip-path: polygon(100% 0%, 100% 51%, 100% 100%, 4% 100%, 0% 51%, 4% 0);
+      
+    }
+
+
+
+}
+@media screen and (max-width:650px){
+    .action-btns button.cta{
+       width: 50%;
+       text-align: center;
+    }
 }

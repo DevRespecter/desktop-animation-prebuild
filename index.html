@@ -8,21 +8,49 @@
     <title>Document</title>
 
 
-    <!-- <link rel="stylesheet" href="css/copy.css"> -->
-    <!-- <link rel="stylesheet" href="lib/materialize.css">
-    
-    nav dropdown doesnt work with materialize-->
+
+    <link rel="stylesheet" href="lib/materialize.css">
+
     <link rel="stylesheet" href="css/landing-style.css">
 
 
-    <!-- <link rel="stylesheet" href="lib/materialize.css">  -->
+
     <!-- re name clip-path containers to ht-container so materialize can distinguish-->
     <!-- FONTS  & ICONS  -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <link href="https://fonts.googleapis.com/css?family=Arvo|Roboto:400,900&display=swap" rel="stylesheet">
 
-    <link rel="shortcut icon" href="favicon/Streamlineicons-Streamline-Ux-Free-Radio-host.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="favicon/Streamlineicons-Streamline-Ux-Free-Radio-host.ico" type="image/x-icon"
+        sizes="16x16">
+    <link rel="shortcut icon" href="favicon/Streamlineicons-Streamline-Ux-Free-Radio-host.ico" type="image/x-icon"
+        sizes="16x16">
+    <link rel="shortcut icon" href="favicon/ms-icon-144x144.png" type="image/x-icon">
+
+    <!-- 
+#region favicon
+    <link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-icon-180x180.png"> -->
+    <!-- <link rel="manifest" href="/manifest.json">-->
+    <link rel="icon" type="image/png" sizes="32x32" href="android-icon-96x96.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="android-icon-144x144.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="android-icon-192x192.png">
+
+    <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+
+    <meta name="msapplication-TileColor" content="#000000">
+    <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+    <meta name="theme-color" content="#000000">
+
+
 
 </head>
 
@@ -49,13 +77,20 @@
         </div>
 
         <div class="ht-container">
-            <div class="title">
+            <div class="title title-mobile">
                 <h1>LANDING PAGE </h1>
-                <p class="landing-para">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat, incidunt
-                    eligendi quisquam ipsam hic rerum non qui cupiditate perferendis error.
+                <p class="flow-text landing-para">
+                    Reusable Material Design Components. <br></br>
+                    Components for use in front end projects <br></br>
+                    Specialize in Websites & Reusable Components for
+                    Materialize.css, bootstrap 4, and pure HTML5
+
                 </p>
                 <div class="action-btns">
-                    <button>See More Work</button>
+                    <button class=" btn-large center blue blue-darken-3 ">
+                        See More Work <i class="fa fa-book"></i>
+
+                    </button>
                 </div>
             </div>
             <!-- END FIRST GRID COLUMN -->
@@ -111,17 +146,35 @@
             </div>
 
 
+            <div class="container-footer-mobile">
+                <img src="img/Streamlineicons-Streamline-Ux-Free-Radio-host.svg" alt="" srcset="">
+            </div>
             <!-- END CONTAINER -->
         </div>
 
         <!-- END WRAPPER -->
+        <div class="fixed-action-btn">
+            <a class="btn btn-large hoverable">
+                action
+            </a>
+            <ul>
+                <li><a class="btn-floating blue"><i class="fa fa-print"></i></a></li>
+                <li><a class="btn-floating blue blue darken-1"><i class="fa fa-share"></i></a></li>
+                <li><a class="btn-floating blue blue-darken-2"><i class=" fa fa-link"></i></a></li>
+                <li><a class="btn-floating blue blue-darken-3" title="streaming"><i class="fa fa-tv"></i></a></li>
+            </ul>
+        </div>
     </div>
-    <div class="backup-container" style="height: 200px; background: #ccc;">
+    <!-- <div class="backup-container" style="height: 200px; background: #ccc;">
 
-    </div>
+    </div> -->
     <script src="lib/jquery3.4.1-min.js"></script>
+    <script src="lib/materialize.js"></script>
     <script>
         // $(document).ready(function () {
+        $('.fixed-action-btn').floatingActionButton({
+            hoverable: false
+        });
         function adaptNav() {
             var x = document.getElementById("menubar");
             if (x.className === "topnav") {
@@ -131,11 +184,11 @@
             }
         }
         // adaptNav()
-            // PSEUDOCODE JQUERY
-            // $("#menubar").on("click", function () {
-            //     console.log("jQuery detected!");
-            //     $(".dropdown-content").show()
-            // })
+        // PSEUDOCODE JQUERY
+        // $(".dropbtn").on("click", function () {
+        //     console.log("jQuery detected!");
+        //     $(".dropdown-content").show()
+        // })
 
         // });
 
